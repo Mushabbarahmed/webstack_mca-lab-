@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Geolocation Visualization</title>
+    <style>
+	body{background-color:black;}
+        #mapContainer {
+            position: relative;        }
+#getLocationButton{
+color:black;
+background-color:white;}
+        
+        #bingMapsControl {
+            position: absolute;
+            top: 0;
+            left: 250px;
+            width: 1000px; 
+            height: 400px;
+	
+box-shadow: 2px -2px -12px 12px white;
+        }
+        
+        #mapCanvas {
+            border: 2px solid #ccc;
+            margin: 10px 0;
+	width:100px;
+	height:100px;
+	border-radius:20px;
+
+	        }
+#getLocationButton{
+margin:20px;
+}
+#getLocationButton:hover{
+background-color:red;}
+    </style>
+</head>
+<body><div style="background-color:grey;border-radius:20px; border:2px solid white; opacity:0.9;">
+    <b><center><h1 style="color:black;">A CITY EXPLORATION WEB APPLICATION</h1></center></b>
+    <p>It allows users to visualize their current location on a map and explore nearby points of interest. The application uses the Canvas and Bing Maps API for map display and integrates geolocation to provide an interactive experience.</p>
+    </div>
+<center><button id="getLocationButton">Get My Location</button></center>
+    <br>
+    <br>
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AhZw73kbEYBjgC-0RMNvIsXqWLReIqATcxxeDLeIKSCks5kP7ASXGS162r5WMM38"></script>
+    <script src="script.js"></script>
+    <div style=" width:800px;" id="mapContainer"> 
+        <canvas style="border:2px solid black; height:400px;" id="mapCanvas"></canvas>
+       <div id="bingMapsControl"></div>
+    </div >
+    <div class="container">
+    </div>
+</body>
+</html>
