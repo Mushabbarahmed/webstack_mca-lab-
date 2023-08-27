@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:grey;
+  }
+  
+  nav {
+    background-color: yellow;
+    color:white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navi{
+    background-color:black;
+  }
+  
+  nav .container {
+    background-color: black;
+    border-radius:20px;
+WIDTH:450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav h1 {
+    font-size: 20px;
+    color:white;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #ffc107;
+  }
+  
+  .frames-container {
+    padding: 20px;
+  }
+  
+  .frame {
+    display: none;
+    padding: 80px 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h2 {
+    color: black;
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #030303;
+    border:2px solid #030303;
+    color:white;
+    border-radius:20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color:white;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    padding: 12px 24px;
+    background-color: #030303;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #ffc107;
+  }
+  
+  /* Add a nice gradient background to the header section */
+  
+  nav {
+    background: linear-gradient(45deg, #0b090a, #d192bb);
+    border-radius:20px;
+   
+  }
+  
+  /* Add a subtle shadow to the main content section */
+  .frames-container {
+    box-shadow: 0px 0px 15px rgba(102, 25, 25, 0.1);
+  }
+  
+  /* Improve readability of project links */
+  ul li a {
+    font-weight: bold;
+  }
+  
+  /* Add a border and padding to the profile image */
+  aside img {
+    border-radius: 50%;
+    border: 5px solid #060506;
+    padding: 5px;
+  }
+  #about{
+    background-color:white;
+    border: 2px solid black;
+    box-shadow: 1 0px 10px;
+    opacity: 0.9;
+  }
+  p{
+    background-color: grey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height:100px;
+    text-align: center;
+    border-radius: 20px;
+  }  
+  #experience{
+    background-color:white;
+    border: 2px solid black;
+    box-shadow: 10px 10px;
+    opacity: 0.9;
+  
+  }
+  #projects{background-color:white;
+    border: 2px solid black;
+    box-shadow: 10px 10px;
+    opacity: 0.9;
+  }
+  #contact{
+  background-color:white;
+    border: 2px solid black;
+    box-shadow: 10px 10px;
+    opacity: 0.9;
+  }
+  #education{
+    background-color:white;
+    border: 2px solid black;
+    box-shadow: 10px 10px;
+    opacity: 0.9;  }
+  .img1{
+    height: 40px;
+    width: 100px;
+    float:right;
+    margin:20px;
+
+  }
+  .ptag:hover{
+    box-shadow: -1px -2px 2px 2px white;
+    text-shadow: 1px 2px white;
+    font-size: 28px;
+
+  }
+  .img2{
+    float:left;
+     width:300px;
+     height: 400px; 
+  }
+  .img2:hover{
+    border: 2px solid black;
+    width:600px;
+    border-radius: 20px;}
+  
