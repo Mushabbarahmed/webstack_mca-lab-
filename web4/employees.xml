@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+
+<employees>
+    <employee>
+        <employeeID>101</employeeID>
+        <personalInfo>
+            <firstName>Johanan</firstName>
+            <lastName>Joshua</lastName>
+            <Dob>30-06-2001</Dob>
+            <gender>Male</gender>
+        </personalInfo>
+        <EmployeeInfo>
+            <position>Senior Manager</position>
+            <salary>200000</salary>
+        </EmployeeInfo>
+        <contactInfo>
+            <email>johanan@gmail.com</email>
+            <phoneNumber>9912345678</phoneNumber>
+        </contactInfo>
+    </employee>
+   
+    <employee>
+        <employeeID>102</employeeID>
+        <personalInfo>
+            <firstName>Mohammed</firstName>
+            <lastName>Maaz</lastName>
+            <Dob>26-05-1999</Dob>
+            <gender>Male</gender>
+        </personalInfo>
+        <EmployeeInfo>
+            <position>Senior Developer</position>
+            <salary>400000</salary>
+        </EmployeeInfo>
+        <contactInfo>
+            <email>mdmaaz@gmail.com</email>
+            <phoneNumber>9876543210</phoneNumber>
+        </contactInfo>
+    </employee>
+
+    <employee>
+        <employeeID>103</employeeID>
+        <personalInfo>
+            <firstName>Ram</firstName>
+            <lastName>Charan</lastName>
+            <Dob>14-09-2002</Dob>
+            <gender>Male</gender>
+        </personalInfo>
+        <EmployeeInfo>
+            <position>HR Manager</position>
+            <salary>500000</salary>
+        </EmployeeInfo>
+        <contactInfo>
+            <email>ramcharan@gmail.com</email>
+            <phoneNumber>8877665544</phoneNumber>
+        </contactInfo>
+    </employee>
+</employees>
+<!-- this is valid xml -->
+
+
+
+
+
+
+
+<!-- this is not a valid xml -->
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee id="1">
+        <personal_information>
+            <first_name>John</first_name>
+            <last_name>Doe</last_name>
+            <date_of_birth>1990-05-15</date_of_birth>
+            <gender>Male</gender>
+        </personal_information>
+        <employment_information>
+            <position>Manager</position>
+            <salary>60000</salary>
+        </employment_information>
+        <contact_information>
+            <email>john.doe@example.com</email>
+            <phone_number>123-456-7890</phone_number>
+        </contact_information>
+    </employee>
+    <employee id="2">
+    </employee>
+    <employee id="3">
+    </employee>
+</employees> -->

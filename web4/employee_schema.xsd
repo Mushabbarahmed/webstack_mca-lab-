@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="employees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="employee">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="employeeID" type="xs:unsignedShort" />
+              <xs:element name="personalInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="firstName" type="xs:string" />
+                    <xs:element name="lastName" type="xs:string" />
+                    <xs:element name="Dob" type="xs:string" />
+                    <xs:element name="gender" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EmployeeInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="position" type="xs:string" />
+                    <xs:element name="salary" type="xs:unsignedInt" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="contactInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email" type="xs:string" />
+                    <xs:element name="phoneNumber" type="xs:unsignedLong" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+<!-- this is valid xsd -->
+
+
+
+
+
+<!-- this is not valid xsd -->
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+     Define complex types for personal, employment, and contact information 
+    <xs:complexType name="PersonalInformationType">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+            <xs:element name="date_of_birth" type="xs:date"/>
+            <xs:element name="gender">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Male"/>
+                        <xs:enumeration value="Female"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EmploymentInformationType">
+        <xs:sequence>
+            <xs:element name="position" type="xs:string"/>
+            <xs:element name="salary" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContactInformationType">
+        <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone_number" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+   
+    <xs:element name="employees">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="personal_information" type="PersonalInformationType"/>
+                            <xs:element name="employment_information" type="EmploymentInformationType"/>
+                            <xs:element name="contact_information" type="ContactInformationType"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:int" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema> -->
