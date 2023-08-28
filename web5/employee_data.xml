@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee>
+        <id>1</id>
+        <firstName>xyz</firstName>
+        <lastName>z</lastName>
+        <dateOfBirth>1990-05-15</dateOfBirth>
+        <gender>Male</gender>
+        <position>Manager</position>
+        <salary>60000</salary>
+        <email>xyz@example.com</email>
+        <phoneNumber>1234567890</phoneNumber>
+    </employee>
+    <!-- Add more employee data here -->
+</employees>
