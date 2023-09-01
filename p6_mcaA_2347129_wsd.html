@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Container styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form header styles */
+        h2 {
+            text-align: center;
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        /* Input styles */
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 2px solid #ff0000;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            transition: border-bottom-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-bottom-color: #b30000;
+        }
+
+        /* Error message styles */
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        /* Success icon styles */
+        .success-icon {
+            color: #00cc66;
+            font-size: 18px;
+        }
+
+        /* Error icon styles */
+        .error-icon {
+            color: red;
+            font-size: 18px;
+        }
+
+        /* Age message styles */
+        #age-message {
+            font-size: 14px;
+            color: #ff0000;
+            text-align: center;
+        }
+
+        /* Submit button styles */
+        button[type="submit"] {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #18b300;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <div>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="name" name="fullname" required>
+                <span id="fullname-error" class="error-message"></span>
+            </div>
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="email-error" class="error-message"></span>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="password-error" class="error-message"></span>
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirm-password" required>
+                <span id="confirmPasswordValidation" class="error-message"></span>
+            </div>
+            <div>
+                <label for="dob">Date of Birth (YYYY-MM-DD):</label>
+                <input type="text" id="dob" name="dob" placeholder="YYYY-MM-DD" required>
+                <span id="dob-error" class="error-message"></span>
+                <p id="age-message"></p> <!-- Add this line to display age -->
+            </div>
+
+            <div>
+                <p id="age-message"></p>
+            </div>
+            <div>
+                <button type="submit" id="submitButton">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript for form validation
+        const form = document.getElementById("registrationForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const dobInput = document.getElementById("dob");
+        const submitButton = document.getElementById("submitButton");
+
+        // Function to validate name (e.g., at least 3 characters)
+        function validateName() {
+            const nameValue = nameInput.value;
+            const nameValidation = document.getElementById("nameValidation");
+
+            if (nameValue.length < 3) {
+                nameValidation.textContent = "Name must be at least 3 characters";
+                nameValidation.classList.add("invalid");
+                return false;
+            } else {
+                nameValidation.textContent = "";
+                nameValidation.classList.remove("invalid");
+                return true;
+            }
+        }
+
+        // Function to validate email using a regular expression
+        function validateEmail() {
+            const emailValue = emailInput.value;
+            const emailValidation = document.getElementById("email-error");
+
+            // Regular expression for email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(emailValue)) {
+                emailValidation.textContent = "Invalid email address";
+                emailValidation.classList.add("invalid");
+                return false;
+            } else {
+                emailValidation.textContent = "";
+                emailValidation.classList.remove("invalid");
+                return true;
+            }
+        }
+
+
+        // Function to validate password with specific format requirements
+        function validatePassword() {
+            const passwordValue = passwordInput.value;
+            const passwordValidation = document.getElementById("password-error");
+
+            // Regular expressions for checking format requirements
+            const minLength = 6;
+            const uppercaseRegex = /[A-Z]/;
+            const lowercaseRegex = /[a-z]/;
+            const digitRegex = /[0-9]/;
+            const specialCharRegex = /[!@#$%^&*]/;
+
+            // Check each requirement
+            if (passwordValue.length < minLength) {
+                passwordValidation.textContent = "Password must be at least 6 characters";
+                passwordValidation.classList.add("invalid");
+                return false;
+            } else if (!uppercaseRegex.test(passwordValue)) {
+                passwordValidation.textContent = "Password must contain at least one uppercase letter";
+                passwordValidation.classList.add("invalid");
+                return false;
+            } else if (!lowercaseRegex.test(passwordValue)) {
+                passwordValidation.textContent = "Password must contain at least one lowercase letter";
+                passwordValidation.classList.add("invalid");
+                return false;
+            } else if (!digitRegex.test(passwordValue)) {
+                passwordValidation.textContent = "Password must contain at least one digit (0-9)";
+                passwordValidation.classList.add("invalid");
+                return false;
+            } else if (!specialCharRegex.test(passwordValue)) {
+                passwordValidation.textContent = "Password must contain at least one special character (!@#$%^&*)";
+                passwordValidation.classList.add("invalid");
+                return false;
+            } else {
+                passwordValidation.textContent = "";
+                passwordValidation.classList.remove("invalid");
+                return true;
+            }
+        }
+
+
+        // Function to validate confirm password (must match password)
+        function validateConfirmPassword() {
+            const confirmPasswordValue = confirmPasswordInput.value;
+            const passwordValue = passwordInput.value;
+            const confirmPasswordValidation = document.getElementById("confirmPasswordValidation");
+
+            if (confirmPasswordValue !== passwordValue) {
+                confirmPasswordValidation.textContent = "Passwords do not match";
+                confirmPasswordValidation.classList.add("invalid");
+                return false;
+            } else {
+                confirmPasswordValidation.textContent = "";
+                confirmPasswordValidation.classList.remove("invalid");
+                return true;
+            }
+        }
+
+
+
+        // Function to calculate age and enable/disable submit button
+        // Function to calculate age and display it
+        function calculateAge() {
+            const dobValue = new Date(dobInput.value);
+            const ageMessage = document.getElementById("age-message");
+
+            const currentDate = new Date();
+            const age = currentDate.getFullYear() - dobValue.getFullYear();
+
+            if (isNaN(age)) {
+                ageMessage.textContent = "";
+            } else if (age < 18) {
+                ageMessage.textContent = "You must be at least 18 years old";
+                ageMessage.classList.add("invalid");
+                submitButton.disabled = true;
+            } else {
+                ageMessage.textContent = "Age: " + age; // Display age in front of Date of Birth
+                ageMessage.classList.remove("invalid");
+                submitButton.disabled = false;
+            }
+        }
+
+
+        // Attach event listeners for real-time validation
+        nameInput.addEventListener("input", validateName);
+        emailInput.addEventListener("input", validateEmail);
+        passwordInput.addEventListener("input", validatePassword);
+        confirmPasswordInput.addEventListener("input", validateConfirmPassword);
+        dobInput.addEventListener("input", calculateAge);
+
+        // Attach event listener for form submission
+        form.addEventListener("submit", function (e) {
+            alert("Thank you for submitting, have a nice day!!")
+            if (!validateName() || !validateEmail() || !validatePassword() || !validateConfirmPassword()) {
+                e.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script>
+</body>
+
+</html>
